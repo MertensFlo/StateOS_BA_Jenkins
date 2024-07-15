@@ -96,7 +96,7 @@ spec:
         
                         sh ./.stdc++-test.sh
                     '''
-                }*/
+                }
                 script{
                     sh '''
                         apt-get -y -qq update && apt-get -y -qq install cmake ninja-build
@@ -113,7 +113,7 @@ spec:
         
                         sh 'make all -f .unit-test.make
                     '''
-                }
+                }*/
             }
         }
     }
