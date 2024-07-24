@@ -33,7 +33,7 @@ spec:
     stages {
         stage('build') {
             steps{
-                build()
+                build
             }
             /*
             steps {
