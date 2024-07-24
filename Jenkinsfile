@@ -1,5 +1,7 @@
 // Uses Declarative syntax to run commands inside a container.
-@Library('StateOS_shared_library@testing')
+libraries {
+    lib('StateOS_shared_library@testing')
+} 
 
 pipeline {
     agent {
