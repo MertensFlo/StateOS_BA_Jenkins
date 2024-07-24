@@ -34,7 +34,9 @@ spec:
     }
     stages {
         stage('build') {
-            test()
+            steps{
+                test()
+            }
             /*
             steps {
                 sh '''
