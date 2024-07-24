@@ -1,4 +1,6 @@
 // Uses Declarative syntax to run commands inside a container.
+@Library('StateOS_shared_library@testing')
+
 pipeline {
     agent {
         kubernetes {
@@ -30,6 +32,8 @@ spec:
     }
     stages {
         stage('Build') {
+            test()
+            /*
             steps {
                 sh '''
                     apt-get update && apt-get -y -qq install git
@@ -59,7 +63,7 @@ spec:
                 '''
                 
                 
-            }
+            }*/
         }
         stage('Test') {
             steps {
