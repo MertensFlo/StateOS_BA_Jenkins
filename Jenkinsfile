@@ -32,7 +32,9 @@ spec:
     }
     stages {
         stage('build') {
+            echo "build stage is running....."
             build
+            echo "build stage is finished!"
             /*
             steps {
                 sh '''
