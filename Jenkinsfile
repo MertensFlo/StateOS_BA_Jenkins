@@ -33,7 +33,7 @@ spec:
         }
     }
     stages {
-        stage('Build') {
+        stage('build') {
             test()
             /*
             steps {
@@ -67,7 +67,7 @@ spec:
                 
             }*/
         }
-        stage('Test') {
+        stage('test') {
             steps {
                 script{
                     sh '''
