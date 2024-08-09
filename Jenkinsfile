@@ -34,7 +34,7 @@ spec:
         stage('build') {
             steps{
                 echo "build stage is running....."
-                script{BuildStage.body()}
+                script{build()}
                 echo "build stage is finished!"
             }
         }/*
