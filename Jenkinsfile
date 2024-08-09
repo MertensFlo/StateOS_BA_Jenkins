@@ -34,7 +34,8 @@ spec:
         stage('build') {
             steps{
                 echo "build stage is running....."
-                script{build()}
+                def build = new StageBuild()
+                build.build()
                 echo "build stage is finished!"
             }
         }/*
