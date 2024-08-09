@@ -35,15 +35,20 @@ spec:
             steps{
                 script{
                     echo "build stage is running....."
-                    def build = new StageBuild()
-                    build.build()
+                    def buildStage = new StageBuild()
+                    buildStage.build()
                     echo "build stage is finished!"
                 }
             }
-        }/*
+        }
         stage('test') {
             steps {
                 script{
+                    echo "build stage is running....."
+                    def testStage = new StageTest()
+                    testStage.test()
+                    echo "build stage is finished!"
+                    /*
                     sh '''
                         apt-get -y -qq update && apt-get -y -qq install cmake ninja-build
                         wget -q https://developer.arm.com/-/media/Files/downloads/gnu/11.3.rel1/binrel/arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi.tar.xz
@@ -58,8 +63,9 @@ spec:
                         cmake --build build -v 
         
                         sh ./.example-test.sh
-                    '''
-                }/*
+                    '''*/
+                }
+                /*
                 script{
                     sh '''
                         apt-get -y -qq update && apt-get -y -qq install cmake ninja-build
@@ -93,8 +99,8 @@ spec:
         
                         sh 'make all -f .unit-test.make
                     '''
-                }
+                }*/
             }
-        }*/
+        }
     }
 }
