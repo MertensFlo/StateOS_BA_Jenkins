@@ -34,20 +34,16 @@ spec:
         stage('build') {
             steps{
                 script{
-                    echo "build stage is running....."
                     def buildStage = new StageBuild()
                     buildStage.build()
-                    echo "build stage is finished!"
                 }
             }
         }
-        stage('test') {
+        stage('example_test') {
             steps {
                 script{
-                    echo "build stage is running....."
                     def testStage = new StageTest()
-                    testStage.test()
-                    echo "build stage is finished!"
+                    testStage.example_test()
                     /*
                     sh '''
                         apt-get -y -qq update && apt-get -y -qq install cmake ninja-build
@@ -65,7 +61,14 @@ spec:
                         sh ./.example-test.sh
                     '''*/
                 }
-                /*
+            }
+        }
+        stage('static code test') {
+                steps {
+                    script{
+                        def testStage = new StageTest()
+                        testStage.static_test()
+                    /*
                 script{
                     sh '''
                         apt-get -y -qq update && apt-get -y -qq install cmake ninja-build
@@ -82,7 +85,16 @@ spec:
         
                         sh ./.stdc++-test.sh
                     '''
+                }*/
                 }
+            }
+        }
+        stage('unit test') {
+            steps {
+                script{
+                    def testStage = new StageTest()
+                    testStage.unit_test()
+                /*
                 script{
                     sh '''
                         apt-get -y -qq update && apt-get -y -qq install cmake ninja-build
