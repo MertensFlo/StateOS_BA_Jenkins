@@ -63,12 +63,12 @@ spec:
                 }
             }
         }
-        stage('static code test') {
-                steps {
-                    script{
-                        def testStage = new StageTest()
-                        testStage.static_test()
-                    /*
+        stage('static_code_test') {
+            steps {
+                script{
+                    def testStage = new StageTest()
+                    testStage.static_test()
+                /*
                 script{
                     sh '''
                         apt-get -y -qq update && apt-get -y -qq install cmake ninja-build
@@ -84,12 +84,12 @@ spec:
                         cmake --build build -v 
         
                         sh ./.stdc++-test.sh
-                    '''
-                }*/
+                    '''*/
+                    
                 }
             }
         }
-        stage('unit test') {
+        stage('unit_test') {
             steps {
                 script{
                     def testStage = new StageTest()
@@ -110,8 +110,8 @@ spec:
                         cmake --build build -v 
         
                         sh 'make all -f .unit-test.make
-                    '''
-                }*/
+                    '''*/
+                }
             }
         }
     }
