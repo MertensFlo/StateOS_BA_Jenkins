@@ -44,22 +44,6 @@ spec:
                 script{
                     def testStage = new StageTest()
                     testStage.example_test()
-                    /*
-                    sh '''
-                        apt-get -y -qq update && apt-get -y -qq install cmake ninja-build
-                        wget -q https://developer.arm.com/-/media/Files/downloads/gnu/11.3.rel1/binrel/arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi.tar.xz
-                        echo "1"
-                        tar -xf arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi.tar.xz
-                    '''
-                    env.JENKINS_PATH = "${env.WORKSPACE}/arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi/bin"
-                    sh '''
-                        arm-none-eabi-gcc -v
-                        cd StateOS_BA_Jenkins
-                        cmake -S. -Bbuild -GNinja
-                        cmake --build build -v 
-        
-                        sh ./.example-test.sh
-                    '''*/
                 }
             }
         }
@@ -68,24 +52,6 @@ spec:
                 script{
                     def testStage = new StageTest()
                     testStage.static_test()
-                /*
-                script{
-                    sh '''
-                        apt-get -y -qq update && apt-get -y -qq install cmake ninja-build
-                        wget -q https://developer.arm.com/-/media/Files/downloads/gnu/11.3.rel1/binrel/arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi.tar.xz
-                        echo "1"
-                        tar -xf arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi.tar.xz
-                    '''
-                    env.JENKINS_PATH = "${env.WORKSPACE}/arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi/bin"
-                    sh '''
-                        arm-none-eabi-gcc -v
-                        cd StateOS_BA_Jenkins
-                        cmake -S. -Bbuild -GNinja
-                        cmake --build build -v 
-        
-                        sh ./.stdc++-test.sh
-                    '''*/
-                    
                 }
             }
         }
@@ -94,23 +60,6 @@ spec:
                 script{
                     def testStage = new StageTest()
                     testStage.unit_test()
-                /*
-                script{
-                    sh '''
-                        apt-get -y -qq update && apt-get -y -qq install cmake ninja-build
-                        wget -q https://developer.arm.com/-/media/Files/downloads/gnu/11.3.rel1/binrel/arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi.tar.xz
-                        echo "1"
-                        tar -xf arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi.tar.xz
-                    '''
-                    env.JENKINS_PATH = "${env.WORKSPACE}/arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi/bin"
-                    sh '''
-                        arm-none-eabi-gcc -v
-                        cd StateOS_BA_Jenkins
-                        cmake -S. -Bbuild -GNinja
-                        cmake --build build -v 
-        
-                        sh 'make all -f .unit-test.make
-                    '''*/
                 }
             }
         }
