@@ -52,7 +52,7 @@ spec:
         stage('static_code_test') {
             steps {
                 script{
-                    if(true){
+                    if(false){
                         def testStage = new StageTest()
                         testStage.test(false, false, true, true, "11.3.rel1", "StateOS_BA_Jenkins") //(boolean example_test, boolean static_code, boolean unit_test, boolean arm, String arm_version, String workingRepo)
                     }
@@ -62,8 +62,11 @@ spec:
         stage('unit_test') {
             steps {
                 script{
-                    def testStage = new StageTest()
-                    testStage.test(false, false, true, true, "11.3.rel1", "StateOS_BA_Jenkins") //(boolean example_test, boolean static_code, boolean unit_test, boolean arm, String arm_version, String workingRepo)
+                    if(true) {
+                        def testStage = new StageTest()
+                        testStage.test(false, false, true, true, "11.3.rel1", "StateOS_BA_Jenkins") //(boolean example_test, boolean static_code, boolean unit_test, boolean arm, String arm_version, String workingRepo)
+                    }
+                    
                 } 
             }
         }
