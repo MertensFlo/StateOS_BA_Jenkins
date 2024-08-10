@@ -43,23 +43,23 @@ spec:
             steps {
                 script{
                     def testStage = new StageTest()
-                    testStage.test(true, false, false, "StateOS_BA_Jenkins") //(boolean example_test, boolean static_code, boolean unit_test, String workingRepo)
+                    testStage.test(true, false, false, true, "11.3.rel1", "StateOS_BA_Jenkins") //(boolean example_test, boolean static_code, boolean unit_test, boolean arm, String arm_version, String workingRepo)
                 }
             }
         }
         stage('static_code_test') {
             steps {
                 script{
-                    def testStage = new StageTest(false, true, false, "StateOS_BA_Jenkins")
-                    testStage.test() //(boolean example_test, boolean static_code, boolean unit_test, String workingRepo)
+                    def testStage = new StageTest()
+                    testStage.test(false, true, false, true, "11.3.rel1", "StateOS_BA_Jenkins") //(boolean example_test, boolean static_code, boolean unit_test, boolean arm, String arm_version, String workingRepo)
                 }
             }
         }
         stage('unit_test') {
             steps {
                 script{
-                    def testStage = new StageTest(false, false, true, "StateOS_BA_Jenkins")
-                    testStage.test() //(boolean example_test, boolean static_code, boolean unit_test, String workingRepo)
+                    def testStage = new StageTest()
+                    testStage.test(false, false, true, true, "11.3.rel1", "StateOS_BA_Jenkins") //(boolean example_test, boolean static_code, boolean unit_test, boolean arm, String arm_version, String workingRepo)
                 } 
             }
         }
