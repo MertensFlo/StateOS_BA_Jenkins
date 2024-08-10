@@ -35,7 +35,7 @@ spec:
             steps{
                 script{
                     def buildStage = new StageBuild()
-                    buildStage.build()
+                    buildStage.build(true, true, true, true, true,true, "MertensFlo", "StateOS_BA_Jenkins", "11.3.rel1")  //(boolean git, boolean wget, boolean xz-utils, boolean arm, boolean build-essential, boolean apt-utils,String workingOrg, String workingRepo, String arm_version)
                 }
             }
         }
