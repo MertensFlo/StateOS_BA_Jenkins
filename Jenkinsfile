@@ -30,5 +30,7 @@ spec:
             retries 2
         }
     }
-    new Pipeline_(this).pipeline_build()
+    node{
+        new Pipeline_(this).pipeline_build()
+    }
 }
