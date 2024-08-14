@@ -28,6 +28,21 @@ node {
         defaultContainer 'shell'
         retries 2
     }
-    new Pipeline_(this).pipeline_build(true,true,true,true)
+    new Pipeline_(this).pipeline_build(
+        true,true,true,true,
+        true,true,true,true,true,true,true,true,
+        "MertensFlo","StateOS_BA_Jenkins",
+        "https://developer.arm.com/-/media/Files/downloads/gnu/11.3.rel1/binrel/arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi.tar.xz",
+        "arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi.tar.xz",
+        "${{github.workspace}}/arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi/bin",
+        "q", "cmake"
+        )
+    //(Boolean flag_build, Boolean flag_example_test, Boolean flag_static_test, Boolean flag_unit_test, 
+    // Boolean flag_git, Boolean flag_wget, Boolean flag_xz_utils, Boolean flag_arm, Boolean flag_build_essential, Boolean flag_apt_utils, Boolean flag_ninja, Boolean flag_submodule, 
+    // String workingOrg, String workingRepo, 
+    // String arm_path, 
+    // String arm_tar_path, 
+    // String arm_dir_path, 
+    // String arm_condition, String cmake_version)
 }
 
