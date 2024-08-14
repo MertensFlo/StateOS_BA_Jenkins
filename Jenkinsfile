@@ -27,8 +27,7 @@ node {
             '''
         defaultContainer 'shell'
         retries 2
-        new Pipeline_(this).pipeline_build(true,true,false,true)
     }
-    //new Pipeline_(this).pipeline_build(true,true,false,true)
+    new Pipeline_(this).pipeline_build(true,true,false,true)
 }
 
