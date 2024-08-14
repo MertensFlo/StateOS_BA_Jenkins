@@ -29,7 +29,7 @@ node {
         retries 2
     }
     new Pipeline_(this).pipeline_build(
-        true,true,false,true,
+        true,true,true,true,
         true,true,true,true,true,true,true,true,true,
         "MertensFlo","StateOS_BA_Jenkins",
         "https://developer.arm.com/-/media/Files/downloads/gnu/11.3.rel1/binrel/arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi.tar.xz",
